@@ -1,4 +1,4 @@
-<script src="http://danielborowski.com/jsboard.min.js"></script># jsboard
+# jsboard
 JavaScript library for board games.
 <br><br>
 jsboard allows you to focus on your game logic, game AI, and game algorithms rather than focusing on creating and styling your game using HTML and CSS. jsboard allows you to create and play 2D board games very easily using its functions so you don't have to worry about how to represent your game in JavaScript or how to display it in the HTML. 
@@ -54,7 +54,7 @@ b.cell("each").on("click", function() {
 
 You should now be able to place X's on your board wherever there's an empty space.
 <table id='game'></table>
-<script src="jsboard.min.js"></script>
+<script src="http://danielborowski.com/jsboard.min.js"></script>
 <script>
 // create board
 var b = jsboard.board({attach:"game", size:"3x3"});
