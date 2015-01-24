@@ -81,4 +81,4 @@ b.cell("each").style({ width: "75px", height: "75px", background: "lightblue", b
 Here's what you should see now.
 
 ![alt text][logo2]
-[logo2]: http://i.imgur.com/aWgXe9U.png "pic"
+[logo2]: http://i.imgur.com/berlbMg.png "pic"
