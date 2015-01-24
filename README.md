@@ -35,7 +35,7 @@ Here is an example board and piece created with the following properties.
 
 ```javascript
 var b = jsboard.board({ attach: "game", size: "3x3" });
-var p = jsboard.piece({ text: "B", fontSize: "40px", textAlign: "center" });
+var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
 ```
 If you open `index.html` you should see the following:
 
@@ -47,10 +47,25 @@ Let's add some functionality to our board. We'll make it so that when we click o
 ```javascript
 b.cell("each").on("click", function() {
   if (b.cell(this).get()==null) {
-    b.cell(this).place(p.clone());
+    b.cell(this).place(x.clone());
   }
 });
 ```
-
 You should now be able to place X's on the board. [Check it out here](http://danielborowski.com/jsboard/demo/demo1.html)
 
+Let's actually turn this into a tic-tac-toe game. All we need to do it alternate the placing of pieces X and O. Here's how the final `index.js` should look.
+
+```javascript
+var b = jsboard.board({ attach: "game", size: "3x3" });
+var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
+var o = jsboard.piece({ text: "O", fontSize: "40px", textAlign: "center"});
+
+var turn = true;
+b.cell("each").on("click", function() {
+  if (b.cell(this).get()==null) {
+    if (turn)   b.cell(this).place(x.clone());
+    else        b.cell(this).place(o.clone()); 
+    turn = !turn;
+  }
+});
+```
