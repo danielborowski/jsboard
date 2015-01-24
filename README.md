@@ -119,7 +119,7 @@ Piece methods and styling.
 ```javascript
 var p = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
 var x = p.clone(); // you must clone a piece before placing it on the board because jsboard.piece only serves as a piece schema and clone() gets it ready for the DOM
-b.style({ cssProperties });
+p.style({ cssProperties });
 ```
 
 Cell methods.
