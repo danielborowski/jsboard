@@ -1,7 +1,9 @@
 # jsboard
 JavaScript library for board games.
 <br><br>
-jsboard allows you to focus on your game logic, game AI, and game algorithms rather than focusing on creating and styling your game using HTML and CSS. jsboard allows you to create and play 2D board games very easily using its functions so you don't have to worry about how to represent your game in JavaScript or how to display it in the HTML. 
+`jsboard` allows you to focus on your game logic, game AI, and game algorithms rather than focusing on creating and styling your game using HTML and CSS. `jsboard` allows you to create and play 2D board games very easily using its functions so you don't have to worry about how to represent your game in JavaScript or how to display it in the HTML. 
+<br><br>
+`jsboard` doesn't require jQuery or any other libraries. Simply include the library in your HTML file like in the example below.
 
 # Setting Up
 All you need to get started is a simple HTML file and a JS file where your game code will go. Here's how your `index.html` file should look:
