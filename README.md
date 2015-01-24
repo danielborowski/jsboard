@@ -37,3 +37,8 @@ Here is an example board and piece created with the following properties.
 var b = jsboard.board({ attach: "game", size: "3x3" });
 var p = jsboard.piece({ text:"X", fontSize: "45px", textAlign: "center" });
 ```
+
+If you open your `index.html` you should see the following:
+
+![alt text][logo]
+[logo]: http://i.imgur.com/ioWoK5O.png "pic1"
