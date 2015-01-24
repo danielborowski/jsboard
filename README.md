@@ -97,6 +97,7 @@ Create a board.
 jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
 // var b = jsboard.board({ attach: "game", size: "3x3" }); 
 // var c = jsboard.board({ attach: "game", size: "8x8", style: "checkerboard" }); 
+// var d = jsboard.board({ attach: "game", size: "8x8", style: "checkerboard", stylePattern: ["blue","green"] }); 
 ```
 
 Board properties, methods, and styling.
