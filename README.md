@@ -53,7 +53,7 @@ b.cell("each").on("click", function() {
 ```
 You should now be able to place X's on the board. [Check it out here](http://danielborowski.com/jsboard/demo/demo1.html)
 
-Let's actually turn this into a tic-tac-toe game. All we need to do it alternate the placing of pieces X and O. Here's how the final `index.js` should look.
+Let's actually turn this into a tic-tac-toe game. All we need to do is alternate the placing of pieces X and O. Here's how the final `index.js` should look.
 
 ```javascript
 var b = jsboard.board({ attach: "game", size: "3x3" });
@@ -69,3 +69,5 @@ b.cell("each").on("click", function() {
   }
 });
 ```
+
+That's it! We just created a functioning tic-tac-toe game (but without alterting a winner) using these simple commands. [Check out the tic-tac-toe game here](http://danielborowski.com/jsboard/demo/demo2.html)
