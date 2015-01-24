@@ -166,3 +166,6 @@ b.cell([N,M]).DOM();
 b.cell(this).DOM();
 b.cell(this,K).DOM();
 ```
+# Examples
+
+[Tic-tac-toe game](http://danielborowski.com/jsboard/demo/demo3.html)
