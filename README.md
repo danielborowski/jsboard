@@ -159,4 +159,10 @@ b.cell(this,K).get();
 // returns matrix notation [N,M] of cell within game board
 b.cell(this).where();
 b.cell(this,K).where();
+
+// return the DOM node for given cell in order to manipulate using
+// standard JS functions. Example: b.cell([0,0]).DOM().classList.add("myclass"); 
+b.cell([N,M]).DOM();
+b.cell(this).DOM();
+b.cell(this,K).DOM();
 ```
