@@ -123,6 +123,7 @@ b.style({ cssProperties });
 Cell methods.
 ```javascript
 var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
+var p = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
 
 // styling cells
 b.cell("each").style({ cssProperties });
@@ -131,8 +132,31 @@ b.cell(this).style({ cssProperties }); // this = current cell
 b.cell(this,K).style({ cssProperties }); // (this,K) = some position K spaces from this cell. Example: b.cell(this,3) represents the cell 3 spaces to the right of this cell (see examples folder)
 
 // placing pieces in cells
-b.cell("each").place(piece.clone());
-b.cell([N,M]).place(piece.clone());
-b.cell(this).place(piece.clone());
-b.cell(this,K).place(piece.clone());
+b.cell("each").place(p.clone());
+b.cell([N,M]).place(p.clone());
+b.cell(this).place(p.clone());
+b.cell(this,K).place(p.clone());
+
+// removing pieces from cells
+b.cell("each").rid();
+b.cell([N,M]).rid();
+b.cell(this).rid();
+b.cell(this,K).rid();
+
+// adding event listeners to cells
+b.cell("each").on(event, function() { } ); 
+b.cell([N,M]).on(event, function() { } ); // Example: b.cell([0,0]).on("click", function() { alert("clicked!"); } );
+b.cell(this).on(event, function() { } );
+b.cell(this,K).on(event, function() { } );
+
+// get content of cell to see if a piece is within some cell 
+// either null or piece.text is returned
+b.cell([N,M]).get();
+b.cell(this).get();
+b.cell(this,K).get();
+
+// check where a specific cell is within the game board 
+// returns matrix notation [N,M] of cell within game board
+b.cell(this).where();
+b.cell(this,K).where();
 ```
