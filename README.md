@@ -101,5 +101,13 @@ Create pieces.
 ```javascript
 jsboard.piece({ text: pieceName [,cssProperties] });
 // var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
-// var knight = jsboard.piece({ text:"WK", textIndent: "-9999px", background: "url('images/white.png') no-repeat", width: "50px", height: "50px", margin: "0 auto" });
+// var k = jsboard.piece({ text:"WK", textIndent: "-9999px", background: "url('images/white.png') no-repeat", width: "50px", height: "50px", margin: "0 auto" });
+```
+
+Board properties.
+```javascript
+// var b = jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
+b.matrix();
+b.rows();
+b.cols();
 ```
