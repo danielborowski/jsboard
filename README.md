@@ -106,8 +106,8 @@ jsboard.piece({ text: pieceName [,cssProperties] });
 
 Board properties.
 ```javascript
-// var b = jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
-b.matrix();
-b.rows();
-b.cols();
+// var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
+b.matrix(); // matrix representation containing values from piece.text or null
+b.rows(); // 5
+b.cols(); // 8
 ```
