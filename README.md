@@ -40,7 +40,7 @@ var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
 If you open `index.html` you should see the following:
 
 ![alt text][logo]
-[logo]: http://i.imgur.com/ioWoK5O.png "pic1"
+[logo]: http://i.imgur.com/ioWoK5O.png "pic"
 
 Let's add some functionality to our board. We'll make it so that when we click on an empty space, one of our pieces will be placed down. We'll do this using the `cell` function from `jsboard` which can modify and get properties from spaces within the game board.
 
@@ -78,3 +78,7 @@ What if we want to change the styling of our board? We actually have `jsboard` f
 b.style({ borderSpacing: "8px" });
 b.cell("each").style({ width: "75px", height: "75px", background: "lightblue", borderRadius: "15px" });
 ```
+Here's what you should see now.
+
+![alt text][logo2]
+[logo2]: http://i.imgur.com/aWgXe9U.png "pic"
