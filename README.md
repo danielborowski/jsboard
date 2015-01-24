@@ -104,10 +104,22 @@ jsboard.piece({ text: pieceName [,cssProperties] });
 // var k = jsboard.piece({ text:"WK", textIndent: "-9999px", background: "url('images/white.png') no-repeat", width: "50px", height: "50px", margin: "0 auto" });
 ```
 
-Board properties.
+Board properties, methods, and styling.
 ```javascript
-// var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
+var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
 b.matrix(); // matrix representation containing values from piece.text or null
-b.rows(); // 5
-b.cols(); // 8
+b.rows();   // 5
+b.cols();   // 8
+b.removeEvents(event, func); // removes event listeners from all board spaces (see chessknight example)
+b.style({ cssProperties });
+```
+
+Cell methods.
+```javascript
+var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
+// styling cells
+b.cell("each").style({ cssProperties });
+b.cell([N,M]).style({ cssProperties }); // [N,M] = position on the game board using matrix notation
+b.cell(this).style({ cssProperties }); // this = current cell 
+b.cell(this,N).style({ cssProperties }); // (this,N) = some position N spaces from this cell (example: b.cell(this,3) represents the cell 3 spaces to the right of this cell
 ```
