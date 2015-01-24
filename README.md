@@ -57,7 +57,7 @@ You should now be able to place X's on your board wherever there's an empty spac
 <script src="http://danielborowski.com/jsboard.min.js"></script>
 <script>
 // create board
-var b = jsboard.board({attach:"game", size:"3x3"});
+var b = jsboard.board({attach:"user-content-game", size:"3x3"});
 var p = jsboard.piece({text:"X", fontSize:"40px", textAlign:"center"});
 b.cell("each").on("click", function() {
   if (b.cell(this).get()==null) {
