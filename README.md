@@ -97,13 +97,6 @@ jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
 // var c = jsboard.board({ attach: "game", size: "8x8", style: "checkerboard" }); 
 ```
 
-Create pieces.
-```javascript
-jsboard.piece({ text: pieceName [,cssProperties] });
-// var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
-// var k = jsboard.piece({ text:"WK", textIndent: "-9999px", background: "url('images/white.png') no-repeat", width: "50px", height: "50px", margin: "0 auto" });
-```
-
 Board properties, methods, and styling.
 ```javascript
 var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
@@ -114,12 +107,32 @@ b.removeEvents(event, func); // removes event listeners from all board spaces (s
 b.style({ cssProperties });
 ```
 
+Create pieces.
+```javascript
+jsboard.piece({ text: pieceName [,cssProperties] });
+// var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
+// var k = jsboard.piece({ text:"WK", textIndent: "-9999px", background: "url('images/white.png') no-repeat", width: "50px", height: "50px", margin: "0 auto" });
+```
+Piece methods and styling.
+```javascript
+var p = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
+var x = p.clone(); // you must clone a piece before placing it on the board because jsboard.piece only serves as a piece schema and clone() gets it ready for the DOM
+b.style({ cssProperties });
+```
+
 Cell methods.
 ```javascript
 var b = jsboard.board({ attach: "game", size: "5x8", style: "checkerboard" }); 
+
 // styling cells
 b.cell("each").style({ cssProperties });
 b.cell([N,M]).style({ cssProperties }); // [N,M] = position on the game board using matrix notation
 b.cell(this).style({ cssProperties }); // this = current cell 
-b.cell(this,N).style({ cssProperties }); // (this,N) = some position N spaces from this cell (example: b.cell(this,3) represents the cell 3 spaces to the right of this cell
+b.cell(this,K).style({ cssProperties }); // (this,K) = some position K spaces from this cell. Example: b.cell(this,3) represents the cell 3 spaces to the right of this cell (see examples folder)
+
+// placing pieces in cells
+b.cell("each").place(piece.clone());
+b.cell([N,M]).place(piece.clone());
+b.cell(this).place(piece.clone());
+b.cell(this,K).place(piece.clone());
 ```
