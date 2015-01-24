@@ -6,7 +6,7 @@ jsboard allows you to focus on your game logic, game AI, and game algorithms rat
 # The Basics
 All you need to get started is a simple HTML file and a JS file where your game code will go. Here's what you need in your HTML file:
 
-`
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +19,6 @@ All you need to get started is a simple HTML file and a JS file where your game 
 <script src="examples/index.js"></script>
 </body>
 </html>
-`
+```
 
 
