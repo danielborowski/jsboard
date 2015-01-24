@@ -5,6 +5,13 @@ JavaScript library for lattice board games.
 <br><br>
 `jsboard` doesn't require jQuery or any other libraries. Simply include the library in your HTML file like in the example below.
 
+# Contents
+
+* [Setting Up](#setting-up)
+* [Introduction](#introduction)
+* [Documentation](#documentation)
+* [Examples](#examples)
+
 # Setting Up
 All you need to get started is a simple HTML file and a JS file where your game code will go. Here's how your `index.html` file should look:
 
