@@ -35,10 +35,19 @@ Here is an example board and piece created with the following properties.
 
 ```javascript
 var b = jsboard.board({ attach: "game", size: "3x3" });
-var p = jsboard.piece({ text:"X", fontSize: "45px", textAlign: "center" });
+var p = jsboard.piece({ text: "B", fontSize: "45px", textAlign: "center" });
 ```
-
-If you open your `index.html` you should see the following:
+If you open `index.html` you should see the following:
 
 ![alt text][logo]
 [logo]: http://i.imgur.com/ioWoK5O.png "pic1"
+
+Let's add some functionality to our board. We'll make it so that when we click on an empty space, one of our pieces will be placed down. We'll do this using the `cell` function from `jsboard` which can modify and get properties from spaces within the game board.
+
+```javascript
+b.cell("each").on("click", function() {
+  if (b.cell(this).get()==null) {
+    b.cell(this).place(p.clone());
+  }
+});
+```
