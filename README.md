@@ -94,7 +94,7 @@ Here's what you should see now.
 
 Create a board.
 ```javascript
-jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
+jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] [,stylePattern: [color1, color2]] });
 // var b = jsboard.board({ attach: "game", size: "3x3" }); 
 // var c = jsboard.board({ attach: "game", size: "8x8", style: "checkerboard" }); 
 // var d = jsboard.board({ attach: "game", size: "8x8", style: "checkerboard", stylePattern: ["blue","green"] }); 
