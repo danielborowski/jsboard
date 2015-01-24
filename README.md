@@ -87,3 +87,19 @@ Here's what you should see now.
 
 ![alt text][logo2]
 [logo2]: http://i.imgur.com/berlbMg.png "pic"
+
+# Documentation
+
+Create a board.
+```javascript
+jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
+// var b = jsboard.board({ attach: "game", size: "3x3" }); 
+// var c = jsboard.board({ attach: "game", size: "8x8", style: "checkerboard" }); 
+```
+
+Create pieces.
+```javascript
+jsboard.piece({ text: pieceName [,cssProperties] });
+// var x = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
+// var knight = jsboard.piece({ text:"WK", textIndent: "-9999px", background: "url('images/white.png') no-repeat", width: "50px", height: "50px", margin: "0 auto" });
+```
