@@ -29,7 +29,7 @@ Then create a blank `index.js` file where the game code will go.
 You have access to the following objects using jsboard.
 
 ```javascript
-jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] });
+jsboard.board({ attach: tableID, size: NxM [,style: "checkerboard"] [,stylePattern: [color1, color2]] });
 jsboard.piece({ text: pieceName [,cssProperties] });
 ```
 
