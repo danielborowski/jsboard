@@ -174,4 +174,5 @@ b.cell(this,K).DOM();
 * [Tic-tac-toe game](http://danielborowski.com/jsboard/demo/demo3.html) simple tic-tac-toe game
 * [Checkers pieces](http://danielborowski.com/jsboard/demo/demo4.html) click the red piece to move around
 * [Chessboard knights](http://danielborowski.com/jsboard/demo/demo5.html) click the knights to move around
+* [Connect Four](http://danielborowski.com/jsboard/demo/demo7.html) play the popular game Connect Four
 * [Quoridor(ish) wall placement](http://danielborowski.com/jsboard/demo/demo6.html) click the piece to move it to the right and click between the spaces to create a wall that prevents the piece from moving past it
