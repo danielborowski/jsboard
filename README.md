@@ -70,7 +70,7 @@ b.cell("each").on("click", function() {
 });
 ```
 
-That's it! We just created a functioning tic-tac-toe game (but without alterting a winner) using these simple commands. [Check out the tic-tac-toe game here](http://danielborowski.com/jsboard/demo/demo2.html)
+That's it! We just created a functioning tic-tac-toe game using these simple commands. [Check out the tic-tac-toe game here](http://danielborowski.com/jsboard/demo/demo2.html)
 
 What if we want to change the styling of our board? We actually have `jsboard` functions to modify each cell or modify the whole board. We'll make changes to both.
 
