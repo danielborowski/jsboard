@@ -272,12 +272,19 @@ window.jsboard = (function(){
                         }
                         // create checkerboard pattern
                         if (props.style && props.style=="checkerboard") {
+                            var colour = "gray";
+                            if (props.stylePattern) {
+                                for (var i=0; i<document.getElementsByTagName("td").length; i++) {
+                                    document.getElementsByTagName("td")[i].style.background = props.stylePattern[0];
+                                }
+                                colour = props.stylePattern[1];
+                            }
                             for (var r=0; r<size[0]; r++) {
                                 if (r%2) var skipCol = true;
                                 else var skipCol = false;
                                 for (var c=0; c<size[1]; c++) {
                                     if (skipCol) 
-                                        document.getElementsByClassName("boardRow_"+r)[0].childNodes[c].style.background = "gray"; 
+                                        document.getElementsByClassName("boardRow_"+r)[0].childNodes[c].style.background = colour; 
                                     skipCol = !skipCol; 
                                 }
                             }

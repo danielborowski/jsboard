@@ -1,5 +1,5 @@
 // create board
-var b = jsboard.board({attach:"game", size:"8x8", style:"checkerboard"});
+var b = jsboard.board({attach:"game", size:"8x8", style:"checkerboard", stylePattern: ["#1f6988","lightblue"]});
 b.cell("each").style({width:"65px", height:"65px"});
 
 // setup pieces
@@ -42,7 +42,7 @@ function showMoves(piece) {
         b.cell(this).place(piece);
         b.removeEvents("click", movePiece);
         for (var i=0; i<newLocs.length; i++) 
-            b.cell(newLocs[i]).style({background:"gray"});
+            b.cell(newLocs[i]).style({background:"lightblue"});
     }
 
 }
