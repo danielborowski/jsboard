@@ -139,7 +139,7 @@ var p = jsboard.piece({ text: "X", fontSize: "40px", textAlign: "center" });
 b.cell("each").style({ cssProperties });
 b.cell([N,M]).style({ cssProperties }); // [N,M] = position on the game board using matrix notation
 b.cell(this).style({ cssProperties }); // this = current cell 
-b.cell(this,K).style({ cssProperties }); // (this,K) = some position K spaces from this cell. Example: b.cell(this,3) represents the cell 3 spaces to the right of this cell (see examples folder)
+b.cell(this,K).style({ cssProperties }); // (this,K) = some position K spaces from this cell. Example: b.cell(this,3) represents the cell 3 spaces to the right of this cell (see quoridorwalls example)
 
 // placing pieces in cells
 b.cell("each").place(p.clone());
