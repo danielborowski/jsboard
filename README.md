@@ -154,10 +154,16 @@ b.cell(this).rid();
 b.cell(this,K).rid();
 
 // adding event listeners to cells
-b.cell("each").on(event, function() { } ); 
-b.cell([N,M]).on(event, function() { } ); // Example: b.cell([0,0]).on("click", function() { alert("clicked!"); } );
-b.cell(this).on(event, function() { } );
-b.cell(this,K).on(event, function() { } );
+b.cell("each").on(event, function); 
+b.cell([N,M]).on(event, function); // Example: b.cell([0,0]).on("click", function() { alert("clicked!"); } );
+b.cell(this).on(event, function);
+b.cell(this,K).on(event, function);
+
+// removing event listeners from cells
+b.cell("each").removeOn(event, function); 
+b.cell([N,M]).removeOn(event, function); // Example: b.cell([0,0]).removeOn("click", myFunc } ); 
+b.cell(this).removeOn(event, function);
+b.cell(this,K).removeOn(event, function);
 
 // get content of cell to see if a piece is within some cell 
 // either null or piece.text is returned
