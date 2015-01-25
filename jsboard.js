@@ -182,6 +182,26 @@ window.jsboard = (function(){
                             th.addEventListener(ev, func);
                         }
                     },
+                    // remove event listener for cells 
+                    removeOn: function(ev,func) {
+                        if (arr=="each") { 
+                            for (var r=0; r<size[0]; r++) {
+                                for (var c=0; c<size[1]; c++) {
+                                    getBoardCell(r,c).removeEventListener(ev, func);
+                                }
+                            }
+                        }
+                        else if (typeof arr[0] == "number") { 
+                            if (arr[0]<0||arr[1]<0||arr[0]>size[0]-1||arr[1]>size[1]-1) { return "OOB"; }
+                            getBoardCell(arr[0],arr[1]).removeEventListener(ev, func);
+                        } 
+                        else {
+                            var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
+                            if (wh[0]<0||wh[1]<0||wh[0]>size[0]-1||wh[1]>size[1]-1) { return "OOB"; }
+                            var th = getBoardCell(wh[0],wh[1]);
+                            th.removeEventListener(ev, func);
+                        }
+                    },
                     // get content of given cell
                     // this is why text property of a piece is required
                     // otherwise it would return null
