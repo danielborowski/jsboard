@@ -1,10 +1,10 @@
 // create board
-var b = jsboard.board({attach:"game", size:"25x50"});
-b.style({borderSpacing: "1px", marginTop: "6px"});
-b.cell("each").style({width:"20px", height:"20px"});
+var b = jsboard.board({attach:"game", size:"30x65"});
+b.style({borderSpacing: "1px", margin: "0 auto", marginTop: "6px",});
+b.cell("each").style({width:"17px", height:"17px"});
 
 // setup pieces
-var lifecell = jsboard.piece({text:"B", textIndent:"-9999px", background: "black"});
+var lifecell = jsboard.piece({text:"B", fontSize: "14px", textIndent:"-9999px", background: "black"});
 
 // keep track of cells on board
 var placedLifeCells = [];
@@ -104,7 +104,7 @@ function startSim() {
 	}
 	// run simulation again if new gen exists
 	if (placedLifeCells.length>1 && !stopped) 
-		setTimeout(function() { startSim(); }, 200);
+		setTimeout(function() { startSim(); }, 150);
 }
 
 // stop simulation
