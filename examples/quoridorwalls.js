@@ -1,5 +1,5 @@
 // create board
-var b = jsboard.board({attach:"game", size:"2x11"});
+var b = jsboard.board({attach:"game", size:"2x15"});
 b.cell("each").style({width:"65px", height:"65px"});
 
 // setup pieces

@@ -1,7 +1,7 @@
 // create board
 var b = jsboard.board({attach:"game", size:"6x7"});
-b.style({borderSpacing: "1px"});
-b.cell("each").style({width:"70px", height:"70px", border: "1px solid yellow"});
+b.style({borderSpacing: "2px"});
+b.cell("each").style({width:"70px", height:"70px", background: "#fffccc", border: "1px solid #748faa", borderRadius: "3px"});
 
 // setup pieces
 var red   = jsboard.piece({text:"R", textIndent:"-9999px", background:"url('images/red.png') no-repeat",   width:"50px", height:"50px", margin:"0 auto" });
