@@ -1,5 +1,5 @@
 # jsboard
-JavaScript library that allows you to easily create lattice styled board games like [Chess](http://coderbyte.com/github/jsboard/demo/demo8.html) and Conway's [Game of Life](http://coderbyte.com/github/jsboard/demo/demo9.html).
+JavaScript library that allows you to easily create board games like [Chess](http://coderbyte.com/github/jsboard/demo/demo8.html) and Conway's [Game of Life](http://coderbyte.com/github/jsboard/demo/demo9.html).
 <br><br>
 `jsboard` allows you to focus on your game logic, game AI, and game algorithms rather than focusing on creating and styling your game using HTML and CSS. `jsboard` allows you to create and play 2D board games very easily using its functions so you don't have to worry about how to represent your game in JavaScript or how to display it in the HTML. 
 <br><br>
