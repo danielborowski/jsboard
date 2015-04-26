@@ -1,5 +1,5 @@
 # jsboard
-JavaScript library that allows you to easily create board games like [Chess](http://coderbyte.com/github/jsboard/demo/demo8.html) and Conway's [Game of Life](http://coderbyte.com/github/jsboard/demo/demo9.html).
+JavaScript library that allows you to easily create board games like [Chess](http://danielborowski.com/jsboard/demo/demo8.html) and Conway's [Game of Life](http://danielborowski.com/jsboard/demo/demo9.html).
 <br><br>
 `jsboard` allows you to focus on your game logic, game AI, and game algorithms rather than focusing on creating and styling your game using HTML and CSS. `jsboard` allows you to create and play 2D board games very easily using its functions so you don't have to worry about how to represent your game in JavaScript or how to display it in the HTML. 
 <br><br>
@@ -59,7 +59,7 @@ b.cell("each").on("click", function() {
     b.cell(this).place(x.clone());
 });
 ```
-You should now be able to place X's on the board. [Check it out here](http://coderbyte.com/github/jsboard/demo/demo1.html)
+You should now be able to place X's on the board. [Check it out here](http://danielborowski.com/jsboard/demo/demo1.html)
 
 Let's actually turn this into a tic-tac-toe game. All we need to do is alternate the placing of pieces X and O. Here's how the final `index.js` should look.
 
@@ -78,7 +78,7 @@ b.cell("each").on("click", function() {
 });
 ```
 
-That's it! We just created a functioning tic-tac-toe game using these simple commands. [Check out the tic-tac-toe game here](http://coderbyte.com/github/jsboard/demo/demo2.html)
+That's it! We just created a functioning tic-tac-toe game using these simple commands. [Check out the tic-tac-toe game here](http://danielborowski.com/jsboard/demo/demo2.html)
 
 What if we want to change the styling of our board? We actually have `jsboard` functions to modify each cell or modify the whole board. We'll make changes to both.
 
@@ -184,14 +184,14 @@ b.cell(this,K).DOM();
 # Examples
 
 Basic
-* [Tic-tac-toe game](http://coderbyte.com/github/jsboard/demo/demo3.html) simple tic-tac-toe game
-* [Connect Four](http://coderbyte.com/github/jsboard/demo/demo7.html) click the top of each column to drop a piece
+* [Tic-tac-toe game](http://danielborowski.com/jsboard/demo/demo3.html) simple tic-tac-toe game
+* [Connect Four](http://danielborowski.com/jsboard/demo/demo7.html) click the top of each column to drop a piece
 
 Checkerboard style
-* [Checkers pieces](http://coderbyte.com/github/jsboard/demo/demo4.html) click the red piece to move around
-* [Chessboard knights](http://coderbyte.com/github/jsboard/demo/demo5.html) click the knights to move around
-* [One-sided Chess game](http://coderbyte.com/github/jsboard/demo/demo8.html) complete movements for white chess pieces
+* [Checkers pieces](http://danielborowski.com/jsboard/demo/demo4.html) click the red piece to move around
+* [Chessboard knights](http://danielborowski.com/jsboard/demo/demo5.html) click the knights to move around
+* [One-sided Chess game](http://danielborowski.com/jsboard/demo/demo8.html) complete movements for white chess pieces
 
 Other games and simulations
-* [Conway's Game of Life](http://coderbyte.com/github/jsboard/demo/demo9.html) place some life cells down and watch your simulation create and destroy life (here's a list of [interesting patterns](http://www.conwaylife.com/wiki/Category:Patterns) you can try out)
-* [Quoridor(ish) wall placement](http://coderbyte.com/github/jsboard/demo/demo6.html) click the piece to move it to the right and click between the spaces to create a wall that prevents the piece from moving past it
+* [Conway's Game of Life](http://danielborowski.com/jsboard/demo/demo9.html) place some life cells down and watch your simulation create and destroy life (here's a list of [interesting patterns](http://www.conwaylife.com/wiki/Category:Patterns) you can try out)
+* [Quoridor(ish) wall placement](http://danielborowski.com/jsboard/demo/demo6.html) click the piece to move it to the right and click between the spaces to create a wall that prevents the piece from moving past it
