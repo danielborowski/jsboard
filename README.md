@@ -71,9 +71,9 @@ var o = jsboard.piece({ text: "O", fontSize: "40px", textAlign: "center"});
 
 var turn = true;
 b.cell("each").on("click", function() {
-  if (b.cell(this).get()==null) {
-    if (turn)   b.cell(this).place(x.clone());
-    else        b.cell(this).place(o.clone()); 
+  if (b.cell(this).get()===null) {
+    if (turn) { b.cell(this).place(x.clone()); }
+    else      { b.cell(this).place(o.clone()); }
     turn = !turn;
   }
 });
