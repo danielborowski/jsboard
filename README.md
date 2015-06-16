@@ -55,8 +55,9 @@ Let's add some functionality to our board. We'll make it so that when we click o
 
 ```javascript
 b.cell("each").on("click", function() {
-  if (b.cell(this).get()==null) 
+  if (b.cell(this).get()===null) {
     b.cell(this).place(x.clone());
+  }
 });
 ```
 You should now be able to place X's on the board. [Check it out here](http://danielborowski.com/jsboard/demo/demo1.html)
