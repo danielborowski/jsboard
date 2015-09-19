@@ -19,7 +19,6 @@ All you need to get started is a simple HTML file and a JS file where your game 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
   <title>Title</title>
 </head>
 <body>
