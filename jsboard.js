@@ -34,13 +34,13 @@ window.jsboard = (function(){
         var methods = {
 
             // return matrix form of game board
-            matrix: function() { 
+            matrix: function() {
                 while (matrixForm.length>0) { matrixForm.pop(); }
                 for (var r=0; r<props.childNodes.length; r++) {
                     matrixForm.push([]);
                     for (var c=0; c<props.childNodes[0].childNodes.length; c++) {
                         if (typeof props.childNodes[r].childNodes[c].childNodes[0] != "undefined") {
-                            matrixForm[r].push(props.childNodes[r].childNodes[c].childNodes[0].innerHTML);    
+                            matrixForm[r].push(props.childNodes[r].childNodes[c].childNodes[0].innerHTML);
                         }
                         else { matrixForm[r].push(null); }
                     }
@@ -59,24 +59,24 @@ window.jsboard = (function(){
             },
             // remove all event listeners on board
             removeEvents: function(ev, func) {
-                for (var i=0; i<document.getElementsByTagName("td").length; i++) { 
-                    document.getElementsByTagName("td")[i].removeEventListener(ev, func);
+                for (var i=0; i<document.getElementsByTagName("td").length; i++) {
+                    document.getElementById(attached).getElementsByTagName("td")[i].removeEventListener(ev, func);
                 }
             },
             // inner cell functions
             cell: function(arr,move) {
                 // get DOM node for given row and col
-                function getBoardCell(row,col) { 
-                    return document.getElementsByClassName("boardRow_"+row)[0].childNodes[col]; 
+                function getBoardCell(row,col) {
+                    return document.getElementById(attached).getElementsByClassName("boardRow_"+row)[0].childNodes[col];
                 }
                 // get DOM node from given data attribute
                 function getObjFromDataAtr(pl) {
-                    var wh = pl.split("x"); 
+                    var wh = pl.split("x");
                     wh[0] = parseInt(wh[0]);
                     wh[1] = parseInt(wh[1]);
-                    if (move) {                             
+                    if (move) {
                         var r = movePieceInMatrix(move,[wh[0],wh[1]]);
-                        wh[0] = r[0]; wh[1] = r[1]; 
+                        wh[0] = r[0]; wh[1] = r[1];
                     }
                     return [wh[0],wh[1]];
                 }
@@ -100,9 +100,9 @@ window.jsboard = (function(){
                 }
                 var cellMethods = {
                     DOM: function() {
-                        if (typeof arr[0] == "number") { 
+                        if (typeof arr[0] == "number") {
                             if (arr[0]<0||arr[1]<0||arr[0]>size[0]-1||arr[1]>size[1]-1) { return document.createElement("div"); }
-                            return document.getElementsByClassName("boardRow_"+arr[0])[0].childNodes[arr[1]];
+                            return document.getElementById(attached).getElementsByClassName("boardRow_"+arr[0])[0].childNodes[arr[1]];
                         }
                         else {
                             var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
@@ -114,7 +114,7 @@ window.jsboard = (function(){
                     },
                     // styling for cells
                     style: function(props) {
-                        if (arr=="each") { 
+                        if (arr=="each") {
                             for (var st in props) {
                                 for (var r=0; r<size[0]; r++) {
                                     for (var c=0; c<size[1]; c++) {
@@ -123,24 +123,24 @@ window.jsboard = (function(){
                                 }
                             }
                         }
-                        else if (typeof arr[0] == "number") { 
+                        else if (typeof arr[0] == "number") {
                             if (arr[0]<0||arr[1]<0||arr[0]>size[0]-1||arr[1]>size[1]-1) { return "OOB"; }
                             for (var st in props) {
                                 getBoardCell(arr[0],arr[1]).style[st] = props[st];
                             }
                         }
-                        else { 
+                        else {
                             var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
                             if (wh[0]<0||wh[1]<0||wh[0]>size[0]-1||wh[1]>size[1]-1) { return "OOB"; }
                             var th = getBoardCell(wh[0],wh[1]);
                             for (var st in props) {
-                                th.style[st] = props[st]; 
+                                th.style[st] = props[st];
                             }
                         }
                     },
                     // place cloned piece in cell
                     place: function(piece) {
-                        if (arr=="each") { 
+                        if (arr=="each") {
                             for (var r=0; r<size[0]; r++) {
                                 for (var c=0; c<size[1]; c++) {
                                     var th = getBoardCell(r,c);
@@ -148,30 +148,30 @@ window.jsboard = (function(){
                                     var ra = Math.floor((Math.random() * 3000) + 1);
                                     var n = piece.cloneNode(true);
                                     n.className = "pieceID_"+ra;
-                                    th.appendChild(n);  
+                                    th.appendChild(n);
                                 }
                             }
                         }
                         else if (typeof arr[0] == "number") {
                             var th = getBoardCell(arr[0],arr[1]);
                             while (th.firstChild) { th.removeChild(th.firstChild); }
-                            getBoardCell(arr[0],arr[1]).appendChild(piece);  
-                        } 
-                        else { 
+                            getBoardCell(arr[0],arr[1]).appendChild(piece);
+                        }
+                        else {
                             var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
                             if (wh[0]<0||wh[1]<0||wh[0]>size[0]-1||wh[1]>size[1]-1) { return "OOB"; }
                             var th = getBoardCell(wh[0],wh[1]);
                             while (th.firstChild) { th.removeChild(th.firstChild); }
-                            getBoardCell(wh[0],wh[1]).appendChild(piece); 
+                            getBoardCell(wh[0],wh[1]).appendChild(piece);
                         }
                     },
                     // remove all pieces from cell
                     rid: function(piece) {
-                        if (arr=="each") { 
+                        if (arr=="each") {
                             for (var r=0; r<size[0]; r++) {
                                 for (var c=0; c<size[1]; c++) {
                                     var th = getBoardCell(r,c);
-                                    while (th.firstChild) { th.removeChild(th.firstChild); }   
+                                    while (th.firstChild) { th.removeChild(th.firstChild); }
                                 }
                             }
                         }
@@ -186,19 +186,19 @@ window.jsboard = (function(){
                             while (th.firstChild) { th.removeChild(th.firstChild); }
                         }
                     },
-                    // event listener for cells 
+                    // event listener for cells
                     on: function(ev,func) {
-                        if (arr=="each") { 
+                        if (arr=="each") {
                             for (var r=0; r<size[0]; r++) {
                                 for (var c=0; c<size[1]; c++) {
                                     getBoardCell(r,c).addEventListener(ev, func);
                                 }
                             }
                         }
-                        else if (typeof arr[0] == "number") { 
+                        else if (typeof arr[0] == "number") {
                             if (arr[0]<0||arr[1]<0||arr[0]>size[0]-1||arr[1]>size[1]-1) { return "OOB"; }
                             getBoardCell(arr[0],arr[1]).addEventListener(ev, func);
-                        } 
+                        }
                         else {
                             var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
                             if (wh[0]<0||wh[1]<0||wh[0]>size[0]-1||wh[1]>size[1]-1) { return "OOB"; }
@@ -206,19 +206,19 @@ window.jsboard = (function(){
                             th.addEventListener(ev, func);
                         }
                     },
-                    // remove event listener for cells 
+                    // remove event listener for cells
                     removeOn: function(ev,func) {
-                        if (arr=="each") { 
+                        if (arr=="each") {
                             for (var r=0; r<size[0]; r++) {
                                 for (var c=0; c<size[1]; c++) {
                                     getBoardCell(r,c).removeEventListener(ev, func);
                                 }
                             }
                         }
-                        else if (typeof arr[0] == "number") { 
+                        else if (typeof arr[0] == "number") {
                             if (arr[0]<0||arr[1]<0||arr[0]>size[0]-1||arr[1]>size[1]-1) { return "OOB"; }
                             getBoardCell(arr[0],arr[1]).removeEventListener(ev, func);
-                        } 
+                        }
                         else {
                             var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
                             if (wh[0]<0||wh[1]<0||wh[0]>size[0]-1||wh[1]>size[1]-1) { return "OOB"; }
@@ -230,14 +230,14 @@ window.jsboard = (function(){
                     // this is why text property of a piece is required
                     // otherwise it would return null
                     get: function() {
-                        if (typeof arr[0] == "number") { 
+                        if (typeof arr[0] == "number") {
                             if (arr[0]<0||arr[1]<0||arr[0]>size[0]-1||arr[1]>size[1]-1) { return "OOB"; }
                             var th = getBoardCell(arr[0],arr[1]);
                             if (typeof th.childNodes[0] == "undefined") { return null; }
                             // need data because it returns object
-                            else { return th.childNodes[0].childNodes[0].data; } 
+                            else { return th.childNodes[0].childNodes[0].data; }
                         }
-                        else { 
+                        else {
                             var wh = getObjFromDataAtr(arr.attributes["data-matrixval"].value);
                             if (wh[0]<0||wh[1]<0||wh[0]>size[0]-1||wh[1]>size[1]-1) { return "OOB"; }
                             var th = getBoardCell(wh[0],wh[1]);
@@ -283,7 +283,7 @@ window.jsboard = (function(){
 
     }
 
-    // methods to create new game board and pieces 
+    // methods to create new game board and pieces
     var methods = {
 
         // create new game board
@@ -293,33 +293,36 @@ window.jsboard = (function(){
                 if (el=="size") {
                     if (!props.attach) { console.log("Need attachment for game board"); }
                     else {
-                        var s = props[el].split("x"); 
+                        var s = props[el].split("x");
+                        var attachedBoard = document.getElementById(props.attach);
+
                         size.push(parseInt(s[0]),parseInt(s[1]));
                         // create table data to represent game board in DOM
                         for (var i=0; i<size[0]; i++) {
                             var a = document.createElement("tr");
                             a.className = "boardRow_"+i;
-                            for (var k=0; k<size[1]; k++) { 
+                            for (var k=0; k<size[1]; k++) {
                                 var t = document.createElement("td");
                                 t.className = 'boardCol_'+k;
                                 t.dataset.matrixval = i+"x"+k;
-                                a.appendChild(t); 
+                                a.appendChild(t);
                             }
-                            document.getElementById(props.attach).appendChild(a);
+                            attachedBoard.appendChild(a);
                         }
+
                         // style default game board
-                        document.getElementById(props.attach).style.borderSpacing  = "2px";
-                        for (var i=0; i<document.getElementsByTagName("td").length; i++) { 
-                            document.getElementsByTagName("td")[i].style.background = "lightgray";
-                            document.getElementsByTagName("td")[i].style.width = "50px";
-                            document.getElementsByTagName("td")[i].style.height = "50px";
+                        attachedBoard.style.borderSpacing  = "2px";
+                        for (var i=0; i<attachedBoard.getElementsByTagName("td").length; i++) {
+                            attachedBoard.getElementsByTagName("td")[i].style.background = "lightgray";
+                            attachedBoard.getElementsByTagName("td")[i].style.width = "50px";
+                            attachedBoard.getElementsByTagName("td")[i].style.height = "50px";
                         }
                         // create checkerboard pattern
                         if (props.style && props.style=="checkerboard") {
                             var colour = "gray";
                             if (props.stylePattern) {
-                                for (var i=0; i<document.getElementsByTagName("td").length; i++) {
-                                    document.getElementsByTagName("td")[i].style.background = props.stylePattern[0];
+                                for (var i=0; i<attachedBoard.getElementsByTagName("td").length; i++) {
+                                    attachedBoard.getElementsByTagName("td")[i].style.background = props.stylePattern[0];
                                 }
                                 colour = props.stylePattern[1];
                             }
@@ -327,26 +330,26 @@ window.jsboard = (function(){
                                 if (r%2) var skipCol = true;
                                 else var skipCol = false;
                                 for (var c=0; c<size[1]; c++) {
-                                    if (skipCol) 
-                                        document.getElementsByClassName("boardRow_"+r)[0].childNodes[c].style.background = colour; 
-                                    skipCol = !skipCol; 
+                                    if (skipCol)
+                                        attachedBoard.getElementsByClassName("boardRow_"+r)[0].childNodes[c].style.background = colour;
+                                    skipCol = !skipCol;
                                 }
                             }
                         }
                     }
                 }
             }
-            return Board(document.getElementById(props.attach),size,props.attach);
+            return Board(attachedBoard,size,props.attach);
         },
 
         // create new game piece
         piece: function(props) {
             // create new DOM node to serve as piece
             var a = document.createElement("div");
-            if (props.text) { 
-                var n = document.createTextNode(props.text); 
+            if (props.text) {
+                var n = document.createTextNode(props.text);
                 a.appendChild(n);
-            }  
+            }
             // add styles
             for (var st in props) {
                 if (st!="text") {
@@ -361,4 +364,3 @@ window.jsboard = (function(){
     return methods;
 
 }());
-
