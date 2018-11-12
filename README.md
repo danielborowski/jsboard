@@ -197,3 +197,4 @@ Checkerboard style
 Other games and simulations
 * [Conway's Game of Life](http://danielborowski.com/jsboard/demo/demo9/) place some life cells down and watch your simulation create and destroy life (here's a list of [interesting patterns](http://www.conwaylife.com/wiki/Category:Patterns) you can try out)
 * [Quoridor(ish) wall placement](http://danielborowski.com/jsboard/demo/demo6/) click the piece to move it to the right and click between the spaces to create a wall that prevents the piece from moving past it
+* [Minesweeper](https://oussbenk.github.io/minesweeper/) JavaScript version of Minesweeper game using jsboard (auhor [Oussama Ben Khiroun](https://github.com/oussbenk))
